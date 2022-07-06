@@ -34,8 +34,8 @@ def numpy_mse():
 
 
 def only_w_linear_regression():
-    x = np.arange(10)
-    y = np.arange(10) * 2  # W = 2, b = 1
+    x = np.arange(10)  #
+    y = np.arange(10) * 2  # W = 2
     alpha = 0.005  # if alpha is very large or small?
     W = 10
 
@@ -52,7 +52,7 @@ def torch_linear_regression_1():
     x_train = torch.arange(10)  # x 값
     y_train = torch.arange(10) * 3 + 7  # y 값
 
-    # requires_grad=True는 변수라는 뜻으로 이해, 변수인 W, b 선언
+    # 단순히 숫자를 사용하는 것이 아니라, 값이 변해야 하는 변수라면 requires_grad=True 옵션이 필요
     W = torch.zeros(1, requires_grad=True)
     b = torch.zeros(1, requires_grad=True)
 
