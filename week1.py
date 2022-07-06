@@ -36,16 +36,19 @@ def numpy_mse():
 def only_w_linear_regression():
     x = np.arange(10)
     y = np.arange(10) * 2  # W = 2, b = 1
-    alpha = 0.005
+    alpha = 0.005  # if alpha is very large or small?
     W = 10
 
     for iters in range(100):
         mse = ((x * W - y) * x).mean()
         W -= mse * alpha
-        print(W)
+        if iters % 10 == 0:
+            print('Epoch {} W: {:.3f}, Cost: {:.6f}'.format(
+                iters, W, mse
+            ))
 
 
-def torch_linear_regression():
+def torch_linear_regression_1():
     x_train = torch.arange(10)  # x 값
     y_train = torch.arange(10) * 3 + 7  # y 값
 
@@ -76,4 +79,4 @@ def torch_linear_regression():
             ))
 
 
-torch_linear_regression()
+
