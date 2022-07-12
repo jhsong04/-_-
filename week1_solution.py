@@ -55,11 +55,11 @@ def sol_2():
 
         hypothesis = (x1_train * W1).sum(dim=0) + b
         '''
-        x1_train * W1 -> 3 x 5 * 1 x 5 = 3 x 5 array
+        x1_train * W1 -> [3 x 5] * [1 x 5] = [3 x 5] array
         ex) 3 x 5 array.sum(dim=0) ->
         [[0, 1, 2, 3, 4]
          [0, 2, 4, 6, 8]
-         [0, 3, 6, 9, 12]].sum(dim=0) = [0, 6, 12, 18, 24] = 1 x 5 array
+         [0, 3, 6, 9, 12]].sum(dim=0) = [0, 6, 12, 18, 24] = [5] array
         '''
         cost = torch.mean((hypothesis - y_train) ** 2)
 
